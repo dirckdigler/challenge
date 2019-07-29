@@ -1,0 +1,4 @@
+services:
+  challenge.apiary:
+    class: \Drupal\challenge\Services\TheMoviesDbServices
+

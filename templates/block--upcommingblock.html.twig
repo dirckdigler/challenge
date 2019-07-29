@@ -1,0 +1,25 @@
+{#
+/**
+ * @file
+ * Profile ws custom block.
+ */
+#}
+{# {{ kint(results) }} #}
+
+{% for item in results %}
+  <div class="card" style="width: 18rem;">
+    <img alt="Card image cap" class="card-img-top"
+      src="{{ base_url }}w185_and_h278_bestv2{{ item.poster_path }}"
+      alt="{{ item.title }}">
+    <div class="card-body">
+      <h5 class="card-title">{{ item.title }}</h5>
+      <p class="card-date">{{ item.release_date }}</p>
+      {# <p class="genre">Genre:
+        <span class="badge badge-warning">Primary</span>
+      </p> #}
+      <a class="btn btn-primary" href="#">More info</a>
+    </div>
+  </div>
+{% endfor %}
+
+

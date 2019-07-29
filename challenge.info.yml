@@ -1,0 +1,5 @@
+name: 'challenge'
+type: module
+description: 'Module consume API themoviedb'
+core: 8.x
+package: 'Custom'

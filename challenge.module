@@ -1,0 +1,44 @@
+<?php
+
+/**
+ * @file
+ * Contains challenge.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function challenge_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the challenge module.
+    case 'help.page.challenge':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Module consume API themoviedb') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function challenge_theme($existing, $type, $theme, $path) {
+  return [
+    'block--upcommingblock' => [
+      'variables' => [
+        'results' => NULL,
+        'base_url' => NULL,
+      ],
+    ],
+    'block--popular-actors-block' => [
+      'variables' => [
+        'results' => NULL,
+        'base_url' => NULL,
+      ],
+    ],
+  ];
+}
