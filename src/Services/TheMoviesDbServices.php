@@ -41,7 +41,6 @@ class TheMoviesDbServices {
       $response['code'] = $e->getCode();
     }
     \Drupal::logger('query')->notice(print_r($response, 1));
-
     return $response;
   }
 

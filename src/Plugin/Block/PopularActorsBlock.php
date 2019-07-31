@@ -51,7 +51,6 @@ class PopularActorsBlock extends BlockBase {
       ? $config->get('actor_number') : 10,
     '#options' => array_combine($range, $range),
     );
-
     return $form;
   }
 

@@ -44,6 +44,7 @@ class DetailMovieController extends ControllerBase {
       $build['error'] = $e->getMessage();
       $build['code'] = $e->getCode();
     }
+    \Drupal::logger('detail_movie')->notice(print_r($output, 1));
     return $output;
   }
 }
