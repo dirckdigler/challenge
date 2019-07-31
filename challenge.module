@@ -56,6 +56,7 @@ function challenge_theme($existing, $type, $theme, $path) {
     ],
     'page--person' => [
       'variables' => [
+        'base_url' => NULL,
         'name' => NULL,
         'profile_path' => NULL,
         'birthday' => NULL,
@@ -63,6 +64,7 @@ function challenge_theme($existing, $type, $theme, $path) {
         'popularity' => NULL,
         'biography' => NULL,
         'gallery' => NULL,
+        'place_of_birth' => NULL,
       ]
     ],
   ];

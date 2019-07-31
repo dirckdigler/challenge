@@ -21,17 +21,20 @@ class DetailPersonController extends ControllerBase {
       $response = $calling->getQuery('person/' . $id);
       $images = $calling->getQuery('person/' . $id . '/images');
       $gallery = $images['profiles'];
-      // kint($response, '$response');
+      $deathday = (NULL !== $response['deathday'])
+      ? $response['deathday'] : FALSE;
 
       $output = [
         '#theme' => 'page--person',
+        '#base_url' => $calling->baseUrl,
         '#name' => $response['name'],
         '#profile_path' => $response['profile_path'],
         '#birthday' => $response['birthday'],
-        '#deathday' => $response['deathday'], //response null if not exist
+        '#deathday' => $deathday,
         '#popularity' => $response['popularity'],
         '#biography' => $response['biography'],
         '#gallery' => $gallery,
+        '#place_of_birth' => $response['place_of_birth'],
       ];
     } catch (\Exception $e) {
       $build['error'] = $e->getMessage();
