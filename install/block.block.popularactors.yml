@@ -1,0 +1,25 @@
+langcode: es
+status: true
+dependencies:
+  module:
+    - challenge
+    - system
+  theme:
+    - prodigious
+id: popularactors
+theme: prodigious
+region: content
+weight: -2
+provider: null
+plugin: popular_actors_block
+settings:
+  id: popular_actors_block
+  label: 'Popular actors'
+  provider: challenge
+  label_display: visible
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: false
+    context_mapping: {  }

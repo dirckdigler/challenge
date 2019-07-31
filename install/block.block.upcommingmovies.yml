@@ -1,0 +1,25 @@
+langcode: es
+status: true
+dependencies:
+  module:
+    - challenge
+    - system
+  theme:
+    - prodigious
+id: upcommingmovies
+theme: prodigious
+region: content
+weight: -3
+provider: null
+plugin: upcomming_block
+settings:
+  id: upcomming_block
+  label: 'Upcomming movies'
+  provider: challenge
+  label_display: visible
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: false
+    context_mapping: {  }
