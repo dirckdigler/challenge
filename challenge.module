@@ -40,5 +40,30 @@ function challenge_theme($existing, $type, $theme, $path) {
         'base_url' => NULL,
       ],
     ],
+    'page--movie' => [
+      'variables' => [
+        'title' => NULL,
+        'base_url' => NULL,
+        'poster_path' => NULL,
+        'genres' => NULL,
+        'overview' => NULL,
+        'production_companies' => NULL,
+        'release_date' => NULL,
+        'original_language' => NULL,
+        'cast' => NULL,
+        'popularity' => NULL,
+      ],
+    ],
+    'page--person' => [
+      'variables' => [
+        'name' => NULL,
+        'profile_path' => NULL,
+        'birthday' => NULL,
+        'deathday' => NULL,
+        'popularity' => NULL,
+        'biography' => NULL,
+        'gallery' => NULL,
+      ]
+    ],
   ];
 }

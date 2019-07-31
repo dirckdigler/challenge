@@ -6,16 +6,22 @@
 #}
 {% for item in results %}
   <div class="card" style="width: 18rem;">
-    <img alt="Card image cap" class="card-img-top"
-      src="{{ base_url }}w185_and_h278_bestv2{{ item.poster_path }}"
-      alt="{{ item.title }}">
+    <a id="movie_{{ item.id }}" class="result" href="/movie/{{ item.id }}" title="{{ item.title }}">
+      <img alt="Card image cap" class="card-img-top"
+        src="{{ base_url }}w185_and_h278_bestv2{{ item.poster_path }}"
+        alt="{{ item.title }}">
+    </a>
     <div class="card-body">
-      <h5 class="card-title">{{ item.title }}</h5>
+      <a id="movie_{{ item.id }}" class="result" href="/movie/{{ item.id }}" title="{{ item.title }}">
+        <h5 class="card-title">{{ item.title }}</h5>
+      </a>
       <p class="card-date">{{ item.release_date }}</p>
       {# <p class="genre">Genre:
         <span class="badge badge-warning">Primary</span>
       </p> #}
-      <a class="btn btn-primary" href="#">More info</a>
+      <a class="btn btn-primary" id="movie_{{ item.id }}" class="result"
+        href="/movie/{{ item.id }}" title="{{ item.title }}">More info
+      </a>
     </div>
   </div>
 {% endfor %}

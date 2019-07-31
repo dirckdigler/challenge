@@ -40,7 +40,7 @@ class TheMoviesDbServices {
       $response['error'] = $e->getMessage();
       $response['code'] = $e->getCode();
     }
-    \Drupal::logger('upcoming')->notice(print_r($response, 1));
+    \Drupal::logger('query')->notice(print_r($response, 1));
 
     return $response;
   }

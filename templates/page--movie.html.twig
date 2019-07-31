@@ -1,0 +1,85 @@
+
+
+<div class="custom_bg">
+  <div class="single_column">
+    <section class="images inner">
+      <div class="poster">
+        <div class="image_content">
+          <a class="" href="{{ base_url }}w300_and_h450_bestv2{{ poster_path }}">
+            <img alt="{{ title }}" class="" sizes="auto"
+              src="{{ base_url }}w300_and_h450_bestv2/{{ poster_path }}">
+          </a>
+        </div>
+      </div>
+      <div class="header_poster_wrapper">
+        <section class="header poster">
+          <div class="title" dir="auto">
+            <span>
+              <a href="#">
+                <h2 class="45">{{ title }}</h2>
+              </a>
+                <span class="release_date">{{ release_date }}</span>
+            </span>
+          </div>
+          <div class="header_info">
+            <h3 dir="auto">Overview</h3>
+            <div class="overview" dir="auto">
+              <p>{{ overview }}</p>
+            </div>
+          </div>
+        </section>
+      </div>
+    </section>
+  </div>
+</div>
+
+<div class="column_wrapper">
+  <div>
+    <div class="white_column">
+      <div>
+        <section class="panel top_billed scroller">
+          <h3 dir="auto">Top Billed Cast</h3>
+          {% for item_cast in cast %}
+            <ol class="people scroller">
+              <li class="card">
+                <a href="/person/{{ item_cast.id }}">
+                  <img alt="{{ item_cast.name }}" class="profile lazyautosizes lazyloaded"
+                    src="{{ base_url }}w138_and_h175_face{{ item_cast.profile_path }}">
+                </a>
+                <p><a href="/person/{{ item_cast.id }}">{{ item_cast.name }}</a></p>
+                <p class="character">{{ item_cast.character }}</p>
+              </li>
+            </ol>
+          {% endfor %}
+        </section>
+      </div>
+    </div>
+    <div class="grey_column">
+      <div>
+        <section class="split_column">
+          <div>
+            <div class="column no_bottom_pad">
+              <section class="facts left_column">
+                <p>
+                  <strong><bdi>Original Language</bdi></strong>
+                  {{ original_language }}
+                </p>
+                <h4><bdi>Genres</bdi></h4>
+                <span class="badge badge-warning">{{genres}}</span>
+                <p>
+                  <h4><bdi>Production companies</bdi></h4>
+                  {{ production_companies }}
+                </p>
+                <p>
+                  <h4><bdi>Popularity</bdi></h4>
+                  {{ popularity }}%
+                </p>
+              </section>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+</div>
+

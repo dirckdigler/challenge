@@ -6,9 +6,14 @@
 #}
 {% for item in results %}
   <div class="card" style="width: 18rem;">
-  <img alt="Card image cap" class="card-img-top" src="{{ base_url }}w235_and_h235_face{{ item.profile_path }}" alt="{{ item.name }}">
+  <a class="image" id="person_{{ item.id }}" class="result"  href="/person/{{ item.id }}"
+    title="{{ item.name }}" alt="{{ item.name }}">
+    <img alt="Card image cap" class="card-img-top" src="{{ base_url }}w235_and_h235_face{{ item.profile_path }}" alt="{{ item.name }}">
+  </a>
   <div class="card-body">
-    <h5 class="card-title">{{ item.name }}</h5>
+    <a class="image" class="result" href="/person/{{ item.id }}" id="person_{{ item.id }}">
+      <h5 class="card-title">{{ item.name }}</h5>
+    </a>
   </div>
   </div>
 {% endfor %}

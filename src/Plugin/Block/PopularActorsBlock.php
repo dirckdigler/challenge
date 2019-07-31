@@ -34,7 +34,7 @@ class PopularActorsBlock extends BlockBase {
       $build['error'] = $e->getMessage();
       $build['code'] = $e->getCode();
     }
-
+    \Drupal::logger('popular_actors')->notice(print_r($build, 1));
     return $build;
   }
 

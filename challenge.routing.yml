@@ -1,0 +1,17 @@
+##
+# Routings controller callback
+challenge.detail_movie_controller:
+  path: 'movie/{id}'
+  defaults:
+    _controller: '\Drupal\challenge\Controller\DetailMovieController::view'
+    _title: 'getDetailMovie'
+  requirements:
+    _permission: 'access content'
+
+challenge.detail_person_controller_view:
+  path: 'person/{id}'
+  defaults:
+    _controller: '\Drupal\challenge\Controller\DetailPersonController::view'
+    _title: 'getDetailPerson'
+  requirements:
+    _permission: 'access content'
