@@ -4,26 +4,25 @@
  * Profile ws custom block.
  */
 #}
-{% for item in results %}
-  <div class="card" style="width: 18rem;">
-    <a id="movie_{{ item.id }}" class="result" href="/movie/{{ item.id }}" title="{{ item.title }}">
-      <img alt="Card image cap" class="card-img-top"
-        src="{{ base_url }}w185_and_h278_bestv2{{ item.poster_path }}"
-        alt="{{ item.title }}">
-    </a>
-    <div class="card-body">
-      <a id="movie_{{ item.id }}" class="result" href="/movie/{{ item.id }}" title="{{ item.title }}">
-        <h5 class="card-title">{{ item.title }}</h5>
+<div class="block-popularmovies flex results_poster_card">
+  {% for item in results %}
+    <div class="card">
+      <a id="movie_{{ item.id }}" class="result" href="/movie/{{ item.id }}" title="{{ item.title|t }}">
+        <img alt="Card image cap" class="card-img-top"
+          src="{{ base_url }}w185_and_h278_bestv2{{ item.poster_path }}"
+          alt="{{ item.title }}">
       </a>
-      <p class="card-date">{{ item.release_date }}</p>
-      {# <p class="genre">Genre:
-        <span class="badge badge-warning">Primary</span>
-      </p> #}
-      <a class="btn btn-primary" id="movie_{{ item.id }}" class="result"
-        href="/movie/{{ item.id }}" title="{{ item.title }}">More info
-      </a>
+      <div class="card-body">
+        <a id="movie_{{ item.id }}" class="result" href="/movie/{{ item.id }}" title="{{ item.title }}">
+          <h5 class="card-title">{{ item.title|capitalize }}</h5>
+        </a>
+        <p class="card-date">{{ item.release_date|date("M d, Y") }}</p>
+          <a class="btn btn-primary btn" class="result" id="movie_{{ item.id }}"
+          href="/movie/{{ item.id }}" title="{{ item.title|t  }}">More info
+        </a>
+      </div>
     </div>
-  </div>
-{% endfor %}
+  {% endfor %}
+</div>
 
 

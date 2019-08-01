@@ -5,11 +5,11 @@ dependencies:
     - challenge
     - system
   theme:
-    - prodigious
+    - bartik
 id: popularactors
-theme: prodigious
+theme: bartik
 region: content
-weight: -2
+weight: 0
 provider: null
 plugin: popular_actors_block
 settings:

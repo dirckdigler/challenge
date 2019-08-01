@@ -24,6 +24,8 @@ class upcommingBlock extends BlockBase {
       $response = $calling->getQuery('movie/upcoming');
       $build = [];
       $item_number = \Drupal::config('challenge.settings')->get('item_number');
+      $item_number = (NULL !== $item_number)
+      ? $item_number : 10;
       $item_filter = array_slice($response['results'], 0, $item_number);
       $genre = $calling->getQuery('genre/movie/list');
       foreach ($item_filter as $item) {

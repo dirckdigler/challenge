@@ -5,16 +5,16 @@ dependencies:
     - challenge
     - system
   theme:
-    - prodigious
-id: upcommingmovies
-theme: prodigious
+    - bartik
+id: popularmovies
+theme: bartik
 region: content
-weight: -3
+weight: 0
 provider: null
-plugin: upcomming_block
+plugin: popular_movies_block
 settings:
-  id: upcomming_block
-  label: 'Upcomming movies'
+  id: popular_movies_block
+  label: 'Popular movies'
   provider: challenge
   label_display: visible
 visibility:

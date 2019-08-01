@@ -1,0 +1,5 @@
+custom_css:
+  version: 1.x
+  css:
+    theme:
+      css/blocks.css: {}

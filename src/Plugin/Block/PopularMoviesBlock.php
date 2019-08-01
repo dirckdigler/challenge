@@ -25,6 +25,8 @@ class PopularMoviesBlock extends BlockBase {
       $build = [];
       $item_number = \Drupal::config('challenge.settings')
         ->get('popular_movies_number');
+      $item_number = (NULL !== $item_number)
+      ? $item_number : 10;
       $item_filter = array_slice($response['results'], 0, $item_number);
       $genre = $calling->getQuery('genre/movie/list');
       foreach ($item_filter as $item) {

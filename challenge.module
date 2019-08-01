@@ -69,3 +69,10 @@ function challenge_theme($existing, $type, $theme, $path) {
     ],
   ];
 }
+
+/**
+ * Implements hook_page_attachments().
+ */
+function challenge_page_attachments(array &$attachments) {
+  $attachments['#attached']['library'][] = 'challenge/custom_css';
+}

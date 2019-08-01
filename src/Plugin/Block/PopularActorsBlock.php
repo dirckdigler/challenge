@@ -24,6 +24,8 @@ class PopularActorsBlock extends BlockBase {
       $response = $calling->getQuery('person/popular');
       $build = [];
       $item_number = \Drupal::config('challenge.settings')->get('actor_number');
+      $item_number = (NULL !== $item_number)
+      ? $item_number : 10;
       $item_filter = array_slice($response['results'], 0, $item_number);
       foreach ($item_filter as $item) {
         $build['#theme'] = 'block--popular-actors-block';
