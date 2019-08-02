@@ -13,3 +13,4 @@ challenge.detail_person_controller_view:
     _controller: '\Drupal\challenge\Controller\DetailPersonController::view'
   requirements:
     _permission: 'access content'
+
