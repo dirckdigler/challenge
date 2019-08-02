@@ -21,24 +21,39 @@ class DetailMovieController extends ControllerBase {
       $response = $calling->getQuery('movie/' . $id);
       $credits = $calling->getQuery('movie/' . $id . '/credits');
 
-     for ($i=0, $len=count($credits['cast']); $i<4; $i++) {
-        $cast[] = $credits['cast'][$i];
+      if (isset($credits['cast']) && NULL !== ($credits['cast'])) {
+        for ($i=0, $len=count($credits['cast']); $i<4; $i++) {
+          $cast[] = $credits['cast'][$i];
+        }
       }
 
-      $genres = reset($response['genres'])['name'];
+      // Validation if data exist
+      $overview = (NULL !== $response['overview'])
+      ? $response['overview'] : FALSE;
       $production_companies = reset($response['production_companies'])['name'];
+      $production_companies = (NULL !== $production_companies)
+      ? $production_companies : FALSE;
+      $release_date = (NULL !== $response['release_date'])
+      ? $response['release_date'] : FALSE;
+      $original_language = (NULL !== $response['original_language'])
+      ? $response['original_language'] : FALSE;
+      $popularity = (NULL !== $response['popularity'])
+      ? $response['popularity'] : FALSE;
+      $genres = reset($response['genres'])['name'];
+      $genres = (NULL !== $genres) ? $genres : FALSE;
+
       $output = [
         '#theme' => 'page--movie',
         '#title' => $response['original_title'],
         '#base_url' => $calling->baseUrl,
         '#poster_path' => $response['poster_path'],
         '#genres' => $genres,
-        '#overview' => $response['overview'],
+        '#overview' => $overview,
         '#production_companies' => $production_companies,
-        '#release_date' => $response['release_date'],
-        '#original_language' => $response['original_language'],
+        '#release_date' => $release_date,
+        '#original_language' => $original_language,
         '#cast' => $cast,
-        '#popularity' => $response['popularity'],
+        '#popularity' => $popularity,
       ];
     } catch (\Exception $e) {
       $build['error'] = $e->getMessage();

@@ -1,13 +1,25 @@
 
-
 .main-content h2 {
   font-size: 1.5em;
   margin: 0 0 4px 0;
   font-weight: 600;
 }
+h3 {
+  font-weight: 600 !important;
+  line-height: 1.3em !important;
+  margin-bottom: 20px !important;
+}
+a {
+  text-decoration: none !important;
+  border-bottom: 1px !important;
+}
 .flex {
   display: flex;
   flex-wrap: wrap;
+}
+.card {
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  background-color: #fff;
 }
 .results_poster_card .card {
   width: 142px;
@@ -16,22 +28,22 @@
   background-color: #fff;
 }
 .btn {
-    background-color: #007bff;
-    color: #fff;
-    border-color: #007bff;
-    display: inline-block;
-    font-weight: 400;
-    text-align: center;
-    white-space: nowrap;
-    vertical-align: middle;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    border: 1px solid transparent;
-    padding: .375rem .75rem;
-    line-height: 1.5;
-    border-radius: .25rem;
+  background-color: #007bff;
+  color: #fff;
+  border-color: #007bff;
+  display: inline-block;
+  font-weight: 400;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  border: 1px solid transparent;
+  padding: .375rem .75rem;
+  line-height: 1.5;
+  border-radius: .25rem;
 }
 .card-body a:hover {
   color: #fff;
@@ -39,29 +51,234 @@
   background-color: #0069d9;
   border-color: #0062cc;
 }
-.header {
-    /* position: fixed; */
-    background: url(../images/themoviedb.svg) no-repeat !important;
-    background-position: 200px 15px !important;
-    background-color: #081c24 !important;
-    background-size: 80px auto !important;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 999;
-    height: 100px;
+#header {
+  background-image: none !important;
+  background-color: #081c24 !important;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+  height: 100px;
 }
-.header .menu {
+#header .site-branding__logo {
+  background: url(../images/themoviedb.svg) no-repeat !important;
+  width: 80px;
+  height: 80px;
+  margin-left: 100px;
+}
+#header .site-branding__logo img {
+  font-size: 0;
+}
+#sidebar-first,
+#block-bartik-page-title,
+#header .menu ,
+#header .site-branding__text{
   display: none;
 }
-.header .site-branding {
+.layout-sidebar-first.path-frontpage  .main-content {
+  margin-left: 20% !important;
+}
+.path-frontpage #block-bartik-content {
   display: none;
 }
 
 
+/* Person detail */
+.layout-sidebar-first.path-movie .main-content,
+.layout-sidebar-first.path-person .main-content {
+  margin-left: 12% !important;
+}
+.person_content .bg_image {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+}
+.person_content .bg_filter {
+  position: relative;
+  background: linear-gradient(to bottom right, #eee, #fff);
+  z-index: 1;
+  max-height: 394px;
+}
+.person_content .single_column {
+  width: 1000px;
+  margin: 0 auto;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  z-index: 0;
+}
+.person_content section.images {
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: nowrap;
+}
 
+section.images div.poster,
+section.images div.profile {
+  display: block;
+  box-sizing: border-box;
+  width: 300px;
+  height: 450px;
+  position: relative;
+  z-index: 2;
+  border-width: 0px;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 0 4px rgba(0,0,0,0.2);
+}
+section.header.profile {
+  min-height: 0;
+  height: 354px;
+}
+section.header {
+  align-content: center;
+  width: 700px;
+  box-sizing: border-box;
+  padding-left: 40px;
+}
+section.header div.title {
+  width: 100%;
+  margin-bottom: 30px;
+}
+section.header div.title a {
+  color: #000;
+}
+section.inner_content h3 {
+  font-weight: 600;
+  line-height: 1.3em;
+}
+section.header div.biography {
+  width: 704px;
+  box-sizing: border-box;
+}
 
+.person_content .column_wrapper {
+  width: 100%;
+  display: flex;
+  align-content: flex-start;
+}
+.person_content .grey_column {
+  width: 290px;
+  padding-left: 0;
+  padding-right: 40px;
+  justify-content: flex-end;
+  display: flex;
+  background-color: #f1f1f1;
+}
+.person_content .left_column {
+  width: 260px;
+  margin-top: 70px;
+}
+.person_content .white_column {
+  padding: 15px;
+}
+.person_content .white_column .image_content {
+  width: 150px;
+  height: 225px;
+}
+.person_content .white_column .card {
+  margin: 15px;
+  list-style:none;
+}
 
+/* Movie detail */
+.movie_content .custom_bg {
+  background-image: radial-gradient(circle at 20% 50%,
+  rgba(20.78%, 15.69%, 11.76%, 0.98) 0%,
+  rgba(27.45%, 22.75%, 19.22%, 0.88) 100%);
+}
+.movie_content .single_column {
+  background: transparent;
+  width: 1000px;
+  margin: 0 auto;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  z-index: 0;
+}
+.movie_content .header_poster_wrapper {
+  display: flex;
+  min-height: 450px;
+}
+.movie_content .header {
+  color: #ffffff;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  align-content: center;
+  width: 624px;
+  box-sizing: border-box;
+  padding-left: 40px;
+}
+.movie_content .header h2 {
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  font-size: 2.4em;
+  line-height: 1.1em;
+  font-weight: 700;
+  display: inline-block;
+}
+.movie_content .release_date {
+  opacity: 0.6;
+  font-size: 1.7em;
+  font-weight: 400;
+}
+.movie_content .white_column {
+  background-color: #fff;
+  width: 595px;
+  min-height: calc(100vh - 795px);
+  float: left;
+  padding-right: 40px;
+  padding-bottom: 40px;
+  box-sizing: border-box;
+}
+.movie_content .top_billed {
+    box-sizing: border-box;
+    width: 740px;
+    display: block;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    border-top: 1px solid #d7d7d7;
+}
+.movie_content .people {
+    list-style-type: none;
+    list-style-position: inside;
+    margin: 0;
+    padding: 0;
+    float: left;
+}
+.movie_content .people li.card {
+    border: 1px solid #e3e3e3;
+    padding-bottom: 10px;
+    width: 140px;
+    background-color: #fff;
+    box-sizing: border-box;
+    margin-right: 10px;
+}
+.movie_content .people li>a {
+    width: 138px;
+    height: 175px;
+    display: block;
+}
+.movie_content .people li p a {
+    font-weight: bold;
+    color: #000;
+    text-decoration: none;
+}
+.movie_content .people li .card_body {
+  padding: 10px;
+  height: 75px;
+}
+.movie_content .grey_column {
+    background-color: #f1f1f1;
+    min-height: calc(100vh - 795px);
+    padding-left: 40px;
+    padding-bottom: 40px;
+    box-sizing: border-box;
+    float: right;
+    width: 320px;
+    margin-top: 95px;
+    padding: 25px;
+}
 
 
 /* Blocks */

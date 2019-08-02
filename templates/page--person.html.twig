@@ -1,76 +1,86 @@
-<div class="bg_image">
-  <div class="bg_filter">
-    <div class="single_column medium">
-      <section class="images inner">
-        <div class="profile">
-          <div class="image_content">
-            <a class="" href="{{ base_url }}w300_and_h450_bestv2{{ profile_path }}">
-              <img alt="{{ name }}" src="{{ base_url }}w300_and_h450_bestv2{{ profile_path }}">
-            </a>
-          </div>
-        </div>
-        <section class="header no_image profile truncated" id="section_header">
-          <div class="title" dir="auto">
-            <a href="/person/18918-dwayne-johnson">
-            <h2>{{ name }}</h2>
-            </a>
-          </div>
-          <h3 dir="auto">Biography</h3>
-          <div class="biography true" dir="auto">
-            <div class="content fade_text">
-              <div class="text ddd-truncated" style="overflow-wrap: break-word;">
-                <p>{{ biography }}</p>
-              </div>
+<div class="person_content">
+
+  <div class="bg_image">
+    <div class="bg_filter">
+      <div class="single_column medium">
+        <section class="images inner">
+          <div class="profile">
+            <div class="image_content">
+              <a class="" href="{{ base_url }}w300_and_h450_bestv2{{ profile_path }}">
+                <img alt="{{ name }}" src="{{ base_url }}w300_and_h450_bestv2{{ profile_path }}">
+              </a>
             </div>
           </div>
-        </section>
-      </section>
-    </div>
-  </div>
-</div>
-
-<div class="column_wrapper reverse person_page">
-  <div class="grey_column">
-    <div class="column left_column" id="left_column">
-      <section class="facts left_column">
-        <h3 class="space"><bdi>Personal Info</bdi></h3>
-        <p>
-          <strong><bdi>Birthday</bdi></strong>{{ birthday }}
-        </p>
-        <p>
-          <strong><bdi>Place_of_birth</bdi></strong>{{ place_of_birth }}
-        </p>
-        {% if deathday %}
-          <p>
-            <strong><bdi>Deathday</bdi></strong>{{ deathday }}
-          </p>
-        {% endif %}
-        <p>
-          <strong><bdi>Popularity</bdi></strong>{{ popularity }}
-        </p>
-      </section>
-    </div>
-  </div>
-  <div class="white_column">
-    <section class="panel user_images">
-      <h3 class="space" dir="auto">Gallery</h3>
-      <div class="results">
-        <ul class="images posters compact">
-          {% for item_picture in gallery %}
-            <li class="card compact">
-              <div class="image_content">
-                <a alt="View Original" class="image" target="_blank" title="View Original"
-                  href="{{ base_url }}original{{ item_picture.file_path }}">
-                  <img alt="" class="poster lazyautosizes lazyloaded"
-                    src="{{ base_url }}w220_and_h330_face{{ item_picture.file_path }}">
-                </a>
+          <section class="header no_image profile truncated flex" id="section_header">
+            <div class="title" dir="auto">
+              <a href="/person/18918-dwayne-johnson">
+              <h2>{{ name }}</h2>
+              </a>
+            </div>
+            <h3 dir="auto">Biography</h3>
+            <div class="biography true" dir="auto">
+              <div class="content fade_text">
+                <div class="text ddd-truncated" style="overflow-wrap: break-word;">
+                  <p>{{ biography }}</p>
+                </div>
               </div>
-            </li>
-          {% endfor %}
-        </ul>
+            </div>
+          </section>
+        </section>
       </div>
-    </section>
+    </div>
   </div>
+
+  <div class="column_wrapper reverse person_page">
+    <div class="grey_column">
+      <div class="column left_column" id="left_column">
+        <section class="facts left_column">
+          <h3 class="space"><bdi>Personal Info</bdi></h3>
+          {% if birthday %}
+            <p>
+              <strong><bdi>Birthday: </bdi></strong>{{ birthday }}
+            </p>
+          {% endif %}
+          {% if place_of_birth %}
+            <p>
+              <strong><bdi>Place of birth: </bdi></strong>{{ place_of_birth }}
+            </p>
+          {% endif %}
+          {% if deathday %}
+            <p>
+              <strong><bdi>Deathday: </bdi></strong>{{ deathday }}
+            </p>
+          {% endif %}
+          {% if popularity %}
+            <p>
+              <strong><bdi>Popularity: </bdi></strong>{{ popularity }}
+            </p>
+          {% endif %}
+        </section>
+      </div>
+    </div>
+    <div class="white_column">
+      <section class="user_images">
+        <h3 class="space" dir="auto">Gallery</h3>
+        <div class="results">
+          <ul class="images posters compact flex">
+            {% for item_picture in gallery %}
+              <li class="card compact">
+                <div class="image_content">
+                  <a alt="View Original" class="image" target="_blank" title="View Original"
+                    href="{{ base_url }}original{{ item_picture.file_path }}">
+                    <img alt="" class="poster lazyautosizes lazyloaded"
+                      src="{{ base_url }}w220_and_h330_face{{ item_picture.file_path }}">
+                  </a>
+                </div>
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
+      </section>
+    </div>
+  </div>
+
 </div>
 
 
