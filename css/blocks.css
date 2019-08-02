@@ -68,6 +68,7 @@ a {
 }
 #header .site-branding__logo img {
   font-size: 0;
+  display: none;
 }
 #sidebar-first,
 #block-bartik-page-title,

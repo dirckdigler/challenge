@@ -1,38 +1,37 @@
 <?php
+
 namespace Drupal\challenge\Services;
 
-use Drupal\Core\Render\Markup;
-use Symfony\Component\HttpFoundation\RedirectResponse;
-use GuzzleHttp\Client;
 use Drupal\Component\Serialization\Json;
 
 class TheMoviesDbServices {
 
-  protected $siteUrl;
-  protected $apiKey;
-  public $baseUrl;
+  const SITE_URL = 'https://api.themoviedb.org/3/';
+  const API_KEY = '693729b685b7570fed8664b50ff701cc';
+  public $baseUrl = 'https://image.tmdb.org/t/p/';
+  protected $httpClient;
 
   /**
    * {@inheritdoc}
    */
   public function __construct() {
-    $this->siteUrl = 'https://api.themoviedb.org/3/';
-    $this->apiKey = '693729b685b7570fed8664b50ff701cc';
+    $this->httpClient = \Drupal::service('http_client_factory');
     $this->baseUrl = 'https://image.tmdb.org/t/p/';
   }
 
   /**
    * {@inheritdoc}
    */
-  public function getQuery($endpoint) {
+  public function getQuery($endpoint, array $queryString = []) {
     try {
-      $client = \Drupal::service('http_client_factory')->fromOptions([
-        'base_uri' => $this->siteUrl,
+      $client = $this->httpClient->fromOptions([
+        'base_uri' => self::SITE_URL,
       ]);
+      $query = [
+        'api_key' => self::API_KEY,
+      ] + $queryString;
       $built = $client->get($endpoint, [
-        'query' => [
-          'api_key' => $this->apiKey,
-        ],
+        'query' => $query,
       ]);
       $response = Json::decode($built->getBody());
     }

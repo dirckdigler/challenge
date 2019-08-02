@@ -12,14 +12,8 @@ use Drupal\Core\Routing\RouteMatchInterface;
  */
 function challenge_help($route_name, RouteMatchInterface $route_match) {
   switch ($route_name) {
-    // Main module help for the challenge module.
     case 'help.page.challenge':
-      $output = '';
-      $output .= '<h3>' . t('About') . '</h3>';
-      $output .= '<p>' . t('Module consume API themoviedb') . '</p>';
-      return $output;
-
-    default:
+      return check_markup(file_get_contents(dirname(__FILE__) . "/README.txt"));
   }
 }
 

@@ -3,3 +3,8 @@ custom_css:
   css:
     theme:
       css/blocks.css: {}
+  js:
+    js/custom.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupalSettings
